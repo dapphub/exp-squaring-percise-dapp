@@ -5,17 +5,16 @@ import "ds-test/test.sol";
 import "./ExpSquaringPercise.sol";
 
 contract ExpSquaringPerciseTest is DSTest {
-    ExpSquaringPercise percise;
+    exp percise;
+    event A(uint);
 
     function setUp() public {
-        percise = new ExpSquaringPercise();
+        percise = new exp();
     }
 
-    function testFail_basic_sanity() public {
-        assertTrue(false);
-    }
-
-    function test_basic_sanity() public {
-        assertTrue(true);
+    function test_basic() public {
+      uint x = percise.npow(2, 5);
+      emit A(x);
+      assertTrue(false);
     }
 }
